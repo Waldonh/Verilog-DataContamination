@@ -8,20 +8,19 @@
 
 ```
 repo/
-├── scripts/                    # 所有脚本（见下方清单）
-│   ├── 10_methods/             # 10 种污染检测方法（第三方，需另装）
-│   ├── train/                  # 训练探测器
-│   ├── detect/                 # benchmark 污染率探测
-│   ├── ablation/               # 消融实验
-│   └── analysis/               # 不一致实验 + 画图
+├── scripts/                    # 核心脚本（直接放本目录，见下方清单）
+│   └── 10_methods/             # 10 种污染检测方法（第三方，需另装）
 ├── data/                       # 数据（见下方清单）
 │   ├── benchmarks/             # 6 个 benchmark 数据
 │   ├── golden/                 # golden 数据集（CodeV/RTLCoder/OriGen）
 │   ├── golden_haven/           # golden 数据集（HAVEN/HAVEN_CodeQwen/vericoder）
 │   └── features/               # 10 方法特征分数
+├── docs/                       # 方法与原理说明（md/tex）
 ├── models/                     # 模型权重（自行下载，见"模型"）
 └── README.md
 ```
+
+> 核心脚本统一放在 `scripts/` 一层（脚本内用 `BASE_DIR = Path(__file__).resolve().parent.parent` 定位项目根目录）。第三方方法脚本放在 `scripts/10_methods/` 下。
 
 ---
 

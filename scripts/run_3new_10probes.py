@@ -19,16 +19,20 @@ SCORER_MAP = {
     "cdd": ["CDD"],
 }
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+
+# 模型权重（自行下载到 models/）与第三方方法脚本（另装到 scripts/10_methods/）
+MODEL_DIR = BASE_DIR / "models"
+THIRD_PARTY = BASE_DIR / "scripts" / "10_methods"
+
 MODELS = {
-    "HAVEN":         "/home/huxiuyu/.cache/huggingface/hub/HAVEN",
-    "HAVEN_CodeQwen": "/home/huxiuyu/.cache/huggingface/hub/HAVEN_CodeQwen",
-    "vericoder":      "/home/huxiuyu/.cache/huggingface/hub/vericoder",
+    "HAVEN":         str(MODEL_DIR / "HAVEN"),
+    "HAVEN_CodeQwen": str(MODEL_DIR / "HAVEN_CodeQwen"),
+    "vericoder":      str(MODEL_DIR / "vericoder"),
 }
 # 三个模型都用 transformers (保守)
 MODEL_BACKENDS = {"HAVEN": "transformers", "HAVEN_CodeQwen": "transformers", "vericoder": "transformers"}
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = BASE_DIR / "data"
 
 GOLDEN_DIR = DATA_DIR / "golden_haven"                    # HAVEN 批 golden 数据集
 FEAT_ROOT = DATA_DIR / "features" / "haven"               # HAVEN 批特征
@@ -40,18 +44,18 @@ OPTIMAL_5F = ["DCPDD", "Reference", "neighbor", "mink_0.2", "zlib"]
 TRAIN_FEAT_DIR = DATA_DIR / "features" / "golden"         # CodeV/OriGen 特征
 TRAIN_GOLDEN_DIR = DATA_DIR / "golden"                     # golden 数据集
 
-# 参考模型 & 脚本
-REF_MODEL = "/home/huxiuyu/.cache/huggingface/hub/Qwen2.5-1.5B-Instruct"
-NEIGHBOR_MLM = "/home/huxiuyu/.cache/huggingface/hub/models--microsoft--codebert-base/snapshots/3b0952feddeffad0063f274080e3c23d75e7eb39"
-PETAL_EMB = "/home/huxiuyu/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
-DCPDD_CORPUS = "/home/huxiuyu/DCPDD/ref_code/ref_verilog.jsonl"
-MINK_SCRIPT = "/home/huxiuyu/Mink++/run_zlib_mink_mink++.py"
-DCPDD_SCRIPT = "/home/huxiuyu/DCPDD/run_local_dcpdd_ppl_eval.py"
-PETAL_SCRIPT = "/home/huxiuyu/PETAL/run.py"
-NEIGHBOR_SCRIPT = "/home/huxiuyu/Mink++/run_neighbor.py"
-REF_SCRIPT = "/home/huxiuyu/Mink++/run_ref.py"
-TOKEN_SCRIPT = "/home/huxiuyu/data-contamination-main/code/Token_Overlap/run_local_code_overlap_eval.py"
-CDD_SCRIPT = "/home/huxiuyu/CDD/run_local_cdd_eval.py"
+# 参考模型 & 第三方方法脚本路径
+REF_MODEL = str(MODEL_DIR / "Qwen2.5-1.5B-Instruct")
+NEIGHBOR_MLM = str(MODEL_DIR / "codebert-base")
+PETAL_EMB = str(MODEL_DIR / "all-MiniLM-L6-v2")
+DCPDD_CORPUS = str(THIRD_PARTY / "DCPDD" / "ref_code" / "ref_verilog.jsonl")
+MINK_SCRIPT = str(THIRD_PARTY / "Mink++" / "run_zlib_mink_mink++.py")
+DCPDD_SCRIPT = str(THIRD_PARTY / "DCPDD" / "run_local_dcpdd_ppl_eval.py")
+PETAL_SCRIPT = str(THIRD_PARTY / "PETAL" / "run.py")
+NEIGHBOR_SCRIPT = str(THIRD_PARTY / "Mink++" / "run_neighbor.py")
+REF_SCRIPT = str(THIRD_PARTY / "Mink++" / "run_ref.py")
+TOKEN_SCRIPT = str(THIRD_PARTY / "data-contamination-main" / "code" / "Token_Overlap" / "run_local_code_overlap_eval.py")
+CDD_SCRIPT = str(THIRD_PARTY / "CDD" / "run_local_cdd_eval.py")
 
 
 def code_hash(c):

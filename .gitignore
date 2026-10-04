@@ -1,0 +1,23 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ---- 模型权重（体积大，自行下载，见 README"模型"）----
+models/*
+!models/README.md
+
+# ---- 特征分数（不随仓库提供，需用第三方方法脚本自行计算）----
+data/features/
+data/chapter3_probes_v2/
+
+# ---- 第三方方法脚本（另装，见 README 第 1 节）----
+scripts/10_methods/*
+!scripts/10_methods/README.md
+
+# ---- 结果图与中间产物 ----
+figures/
+*.cbm
+*.pkl
+*.npy
+.DS_Store
