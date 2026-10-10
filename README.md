@@ -136,6 +136,24 @@ MODEL_DIR    = BASE_DIR / "models"                   # 模型权重
 
 ---
 
+- ## 模型
+- 
+- 需要自行下载的模型（放入 `models/`）：
+- 
+- | 模型 | 来源 |
+- |---|---|
+- | CodeGen-6B-Multi | https://huggingface.co/Salesforce/codegen-6B-multi |
+- | Phi-2 | https://huggingface.co/microsoft/phi-2 |
+- | DeepSeek-Coder-6.7B | https://huggingface.co/deepseek-ai/deepseek-coder-6.7b-instruct |
+- | Qwen2.5-Coder-7B | https://huggingface.co/Qwen/Qwen2.5-Coder-7B |
+- | ChipGPT | https://www.modelscope.cn/models/changkaiyan/ChipGPT-Llama2-SFT-7B |
+- | RTLCoder | https://huggingface.co/ishorn5/RTLCoder-Deepseek-v1.1 |
+- | VeriGen | https://huggingface.co/shailja/fine-tuned-codegen-6B-Verilog |
+- | Qwen2.5-1.5B-Instruct（参考模型） | https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct |
+- | CodeBERT | https://huggingface.co/microsoft/codebert-base |
+- | all-MiniLM-L6-v2 | https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2 |
+
+
 ## 复现步骤
 
 1. 下载/放置 10 种检测方法的第三方脚本（见第 1 节）；
