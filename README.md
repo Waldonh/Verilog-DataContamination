@@ -16,7 +16,7 @@ repo/
 │   ├── golden_haven/           # golden 数据集（HAVEN/HAVEN_CodeQwen/vericoder）
 │   └── features/               # 10 方法特征分数
 ├── docs/                       # 方法与原理说明（md/tex）
-├── models/                     # 模型权重（自行下载，见"模型"）
+├── models/                     
 └── README.md
 ```
 
