@@ -12,8 +12,8 @@ repo/
 │   └── 10_methods/             # 10 种污染检测方法（第三方，需另装）
 ├── data/                       # 数据（见下方清单）
 │   ├── benchmarks/             # 6 个 benchmark 数据
-│   ├── golden/                 # golden 数据集（CodeV/RTLCoder/OriGen）
-│   ├── golden_haven/           # golden 数据集（HAVEN/HAVEN_CodeQwen/vericoder）
+│   ├── golden1/                # golden 数据集（CodeV/RTLCoder/OriGen）
+│   ├── golden2/                # golden 数据集（HAVEN/HAVEN_CodeQwen/vericoder）
 │   └── features/               # 10 方法特征分数
 ├── docs/                       # 方法与原理说明（md/tex）
 ├── models/                     
