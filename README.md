@@ -13,8 +13,7 @@ repo/
 ├── data/                       # Data (see the list below)
 │   ├── benchmarks/             # Data for 6 benchmarks
 │   ├── golden1/                # Golden datasets (CodeV/RTLCoder/OriGen)
-│   ├── golden2/                # Golden datasets (HAVEN/HAVEN_CodeQwen/vericoder)
-│   └── features/               # Feature scores of the 10 methods
+│   └── golden2/                # Golden datasets (HAVEN/HAVEN_CodeQwen/vericoder)
 ├── docs/                       # Method and principle descriptions (md/tex)
 ├── models/                     
 └── README.md
