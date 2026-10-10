@@ -20,11 +20,8 @@ repo/
 └── README.md
 ```
 
-> 核心脚本统一放在 `scripts/` 一层（脚本内用 `BASE_DIR = Path(__file__).resolve().parent.parent` 定位项目根目录）。第三方方法脚本放在 `scripts/10_methods/` 下。
 
 ---
-
-## 按论文顺序的内容清单
 
 ### 1. 10 种污染检测方法
 
@@ -50,10 +47,9 @@ repo/
 | VerilogEval_v2 | 156 | spec-to-rtl 子集，Instruction = 纯文字描述 |
 | RTLLM_v1 | 29 | v1.0 |
 | RTLLM_v2 | 50 | v2.0 |
-| RealBench_module | — | 模块级 |
-| RealBench_system | — | 系统级 |
+| RealBench_module | 60 | 模块级 |
+| RealBench_system | 4 | 系统级 |
 
-详细版本说明见 `docs/benchmark_versions.md`。
 
 ### 3. 5 模型 × 6 benchmark 的 10 方法不一致实验
 
@@ -71,7 +67,6 @@ repo/
 - **CodeV / RTLCoder / OriGen** 的训练集 `train_800` 与测试集 `test_200`（各 400+400 / 100+100）
 - **HAVEN / HAVEN_CodeQwen / vericoder** 的测试集 `test_200`（各 100+100）
 
-> 直接提供已构造好的 golden 数据（构造脚本不公开）。
 
 ### 6. 训练探测器
 
@@ -152,21 +147,4 @@ MODEL_DIR    = BASE_DIR / "models"                   # 模型权重
 
 ---
 
-## 模型
 
-需要自行下载的模型（放入 `models/`）：
-
-| 模型 | 来源 |
-|---|---|
-| CodeGen-6B-Multi | Salesforce/codegen-6B-multi |
-| Phi-2 | microsoft/phi-2 |
-| DeepSeek-Coder-6.7B | deepseek-ai/deepseek-coder-6.7b-instruct |
-| Qwen2.5-Coder-7B | Qwen/Qwen2.5-Coder-7B |
-| ChipGPT | changkaiyan/ChipGPT-Llama2-SFT-7B |
-| RTLCoder | ishorn5/RTLCoder-Deepseek-v1.1 |
-| VeriGen | shailja/fine-tuned-codegen-6B-Verilog |
-| Qwen2.5-1.5B-Instruct（参考模型） | Qwen/Qwen2.5-1.5B-Instruct |
-| CodeBERT | microsoft/codebert-base |
-| all-MiniLM-L6-v2 | sentence-transformers/all-MiniLM-L6-v2 |
-
-> OriGen 与 VeriCoder 为项目自定义模型，需另行说明获取方式。
