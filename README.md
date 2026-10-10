@@ -152,6 +152,8 @@ MODEL_DIR    = BASE_DIR / "models"                   # 模型权重
 - | Qwen2.5-1.5B-Instruct（参考模型） | https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct |
 - | CodeBERT | https://huggingface.co/microsoft/codebert-base |
 - | all-MiniLM-L6-v2 | https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2 |
+- | OriGen | https://huggingface.co/henryen/OriGen |
+- | VeriCoder | https://huggingface.co/LLM4Code/VeriCoder_Qwen14B |
 
 
 ## 复现步骤
